@@ -8,4 +8,4 @@ First install dependencies:
 
 Then start the dev mode:
 
-`yarn build`
+`yarn storybook`
