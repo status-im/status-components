@@ -17,10 +17,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn test
-      - run: yarn build
+      - run: yarn build-storybook
       - persist_to_workspace:
           root: .
-          paths: build
+          paths: storybook-static
 
   components-deploy:
     docker:
@@ -38,8 +38,7 @@ jobs:
             - "5f:76:ee:7a:54:c7:83:b6:89:cc:ff:cc:5f:77:eb:d2"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "Auto generated commit" --dist build
-
+          command: gh-pages --dotfiles --message "Auto generated commit" --dist storybook-static
 workflows:
   version: 2
   build:
