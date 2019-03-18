@@ -1,0 +1,49 @@
+version: 2
+jobs:
+  components-build:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: yarn test
+      - run: yarn build-storybook
+      - persist_to_workspace:
+          root: .
+          paths: storybook-static
+
+  components-deploy:
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Install and configure dependencies
+          command: sudo npm install -g gh-pages@2.0.1 && git config user.email "ozdemirsercan27@gmail.com" && git config user.name "rsercano"
+
+      - add_ssh_keys:
+          fingerprints:
+            - "5f:76:ee:7a:54:c7:83:b6:89:cc:ff:cc:5f:77:eb:d2"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "Auto generated commit" --dist storybook-static
+workflows:
+  version: 2
+  build:
+    jobs:
+      - components-build
+      - components-deploy:
+          requires:
+            - components-build
