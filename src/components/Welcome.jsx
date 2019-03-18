@@ -1,6 +1,4 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-
 
 const styles = {
   main: {
@@ -39,10 +37,9 @@ export default class Welcome extends React.Component {
   render() {
     return (
       <div style={styles.main}>
-        <Typography variant="display3">Welcome to Stability</Typography>
-        <Typography variant="subheading" gutterBottom>
+        <>
           A reusable component library that is designed and engineered to help us build better product faster at Status.
-        </Typography>
+        </>
       </div>
     );
   }
