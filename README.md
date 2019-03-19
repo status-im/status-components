@@ -1,4 +1,5 @@
-A repository of generic components for Status.im
+A set of React/React native components used by Status.im projects [![CircleCI](https://img.shields.io/circleci/project/github/status-im/status-components.svg)](https://circleci.com/gh/status-im/status-components/tree/master)
+
 
 ## Hack
 
