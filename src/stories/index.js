@@ -4,14 +4,17 @@ import 'typeface-roboto'
 import { storiesOf } from '@storybook/react'
 import { linkTo } from '@storybook/addon-links'
 
-import StatusWelcome from '../components/Welcome'
+import { Text, TouchableHighlight, View } from 'react-native';
 import { Button } from '../components/Button'
-// import MobileButton from '../components/MobileButton'
-
-
-storiesOf('Welcome', module)
-  .add('To Status-Welcome', () => <StatusWelcome showApp={linkTo('Button')} />)
 
 storiesOf('Button', module)
-  .add('To Status-Button', () => <Button title="Click Me" />)
-  .add('Red Button', () => <Button title="Click Me" color="red" />)
+  .add('Main button', () =>
+    <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+      <Button main={true} title="Click Me" />
+      <Button main={true} disabled={true} title="Click Me" />
+    </View>)
+  .add('Secondary button', () =>
+    <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+      <Button title="Click Me" />
+      <Button disabled={true} title="Click Me" />
+    </View>);
