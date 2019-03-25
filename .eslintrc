@@ -1,0 +1,40 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "prettier",
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "__DEV__": false,
+    "__TEST__": false,
+    "__PROD__": false,
+    "__COVERAGE__": false
+  },
+  "rules": {
+    "valid-jsdoc": "warn",
+    "react/prop-types": "error",
+    "linebreak-style": ["error", "unix"],
+    "prettier/prettier": "error",
+    "max-len": ["error", 80]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./.storybook/webpack.config.js"
+      }
+    },
+    "react": {
+      "pragma": "React",
+      "version": "16.8"
+    }
+  }
+}
