@@ -2,9 +2,15 @@ import { rgb, rgba } from 'polished'
 
 export default {
   borderRadius: {
-    kilo: '1px',
-    mega: '4px',
-    giga: '5px',
+    bit: '4px',
+    byte: '8px',
+    kilo: '12px',
+    mega: '16px',
+    giga: '24px',
+    tera: '32px',
+    peta: '40px',
+    exa: '48px',
+    zetta: '56px'
   },
 
   colors: {
@@ -13,6 +19,11 @@ export default {
         hex: '#4360DF',
         rgb: rgb(67, 96, 223),
         title: 'Accent Blue',
+      },
+      lightBlue: {
+        hex: '#ECEFFC',
+        rgb: rgb(236, 239, 252),
+        title: 'Light Blue',
       },
       black: {
         hex: '#000000',
@@ -24,20 +35,15 @@ export default {
         rgb: rgb(147, 155, 161),
         title: 'Dark Grey',
       },
-      green: {
-        hex: '#44D058',
-        rgb: rgb(68, 208, 88),
-        title: 'Green',
-      },
-      lightBlue: {
-        hex: '#ECEFFC',
-        rgb: rgb(236, 239, 252),
-        title: 'Light Blue',
-      },
       lightGrey: {
         hex: '#EEF2F5',
         rgb: rgb(238, 242, 245),
         title: 'Light Grey',
+      },
+      green: {
+        hex: '#44D058',
+        rgb: rgb(68, 208, 88),
+        title: 'Green',
       },
       red: {
         hex: '#FF2D55',
@@ -51,22 +57,27 @@ export default {
       },
     },
     shades: {
-      black: {
+      black10: {
         hex: '#000000',
         rgb: rgba(0, 0, 0, 0.1),
         title: '10% of Black',
       },
-      darkGrey: {
+      darkGrey40: {
         hex: '#939BA1',
         rgb: rgba(147, 155, 161, 0.4),
         title: '40% of Dark Grey',
       },
-      darkWhite: {
+      white70: {
+        hex: '#FFFFFF',
+        rgb: rgba(255, 255, 255, 0.7),
+        title: '70% of White',
+      },
+      white40: {
         hex: '#FFFFFF',
         rgb: rgba(255, 255, 255, 0.4),
         title: '40% of White',
       },
-      lightWhite: {
+      white10: {
         hex: '#FFFFFF',
         rgb: rgba(255, 255, 255, 0.1),
         title: '10% of White',
@@ -101,9 +112,7 @@ export default {
   },
 
   lineHeights: {
-    xs: '14px',
-    s: '16px',
-    m: '22px',
-    l: '28px',
+    small: '120%',
+    normal: '140%',
   },
 }
