@@ -9,8 +9,8 @@ const Header = styled('div')`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeights.bold};
     font-size: ${theme.fontSizes.xl};
-    line-height: ${theme.lineHeights.l};
-    margin-bottom: 20px;
+    line-height: ${theme.lineHeights.normal};
+    margin-bottom: ${theme.spacings.giga};
   `};
 `
 
@@ -18,8 +18,8 @@ const TitleBold = styled('div')`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeights.bold};
     font-size: ${theme.fontSizes.l};
-    line-height: ${theme.lineHeights.m};
-    margin-bottom: 20px;
+    line-height: ${theme.lineHeights.normal};
+    margin-bottom: ${theme.spacings.giga};
   `};
 `
 
@@ -27,8 +27,8 @@ const Title = styled('div')`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeights.normal};
     font-size: ${theme.fontSizes.l};
-    line-height: ${theme.lineHeights.m};
-    margin-bottom: 20px;
+    line-height: ${theme.lineHeights.normal};
+    margin-bottom: ${theme.spacings.giga};
   `};
 `
 
@@ -36,8 +36,8 @@ const MainMedium = styled('div')`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeights.semi};
     font-size: ${theme.fontSizes.m};
-    line-height: ${theme.lineHeights.m};
-    margin-bottom: 20px;
+    line-height: ${theme.lineHeights.normal};
+    margin-bottom: ${theme.spacings.giga};
   `};
 `
 
@@ -45,8 +45,8 @@ const Main = styled('div')`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeights.normal};
     font-size: ${theme.fontSizes.m};
-    line-height: ${theme.lineHeights.m};
-    margin-bottom: 20px;
+    line-height: ${theme.lineHeights.normal};
+    margin-bottom: ${theme.spacings.giga};
   `};
 `
 
@@ -54,8 +54,8 @@ const Caption = styled('div')`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeights.normal};
     font-size: ${theme.fontSizes.s};
-    line-height: ${theme.lineHeights.s};
-    margin-bottom: 20px;
+    line-height: ${theme.lineHeights.normal};
+    margin-bottom: ${theme.spacings.giga};
   `};
 `
 
@@ -63,10 +63,10 @@ const Timestamp = styled('div')`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeights.normal};
     font-size: ${theme.fontSizes.xs};
-    line-height: ${theme.lineHeights.xs};
+    line-height: ${theme.lineHeights.normal};
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: ${theme.spacings.giga};
   `};
 `
 

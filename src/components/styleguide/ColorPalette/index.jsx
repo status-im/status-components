@@ -28,11 +28,12 @@ class ColorPalette extends React.Component {
 
         <h2>Shades</h2>
 
-        <Swatch color={theme.colors.shades.darkGrey} />
-        <Swatch color={theme.colors.shades.black} />
+        <Swatch color={theme.colors.shades.darkGrey40} />
+        <Swatch color={theme.colors.shades.black10} />
 
-        <Swatch color={theme.colors.shades.darkWhite} />
-        <Swatch color={theme.colors.shades.lightWhite} />
+        <Swatch color={theme.colors.shades.white70} />
+        <Swatch color={theme.colors.shades.white40} />
+        <Swatch color={theme.colors.shades.white10} />
       </>
     )
   }
