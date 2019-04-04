@@ -18,3 +18,4 @@ Tests
 ## Notes
 
 This project uses React Native Web, so to keep React Native compatibility [only available APIs](https://github.com/necolas/react-native-web#components) can be used cross platform.
+      

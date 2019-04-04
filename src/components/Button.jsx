@@ -57,7 +57,13 @@ class Button extends React.Component {
         onPress={onPress}
         accessibilityLabel={accessibilityLabel}
       >
-        <Text style={[styles.text, main && styles.textMain, disabled && styles.textDisabled]}>
+        <Text
+          style={[
+            styles.text,
+            main && styles.textMain,
+            disabled && styles.textDisabled,
+          ]}
+        >
           {title}
         </Text>
       </TouchableHighlight>
