@@ -30,8 +30,7 @@ const styles = StyleSheet.create({
   input: {
     marginBottom: 16,
     marginHorizontal: 16,
-    height: 52,
-    paddingLeft: 16,
+    padding: 16,
     borderRadius: 8,
     width: 343,
     backgroundColor: colors.main.lightGrey.rgb,
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
 
 class TextInputComponent extends React.Component {
   render() {
-    const { label, error, text } = this.props
+    const { label, error, text, maxNumOfLines, multiLine,} = this.props
 
     return (
       <View>
@@ -66,6 +65,8 @@ class TextInputComponent extends React.Component {
               style={[styles.input, styles.text]}
               {...this.props}
               placeholderTextColor={'gray'}
+              multiline={multiLine}
+              numberOfLines={maxNumOfLines}
               autoCapitalize={'none'}
               value={text}
             />
@@ -80,6 +81,13 @@ TextInputComponent.propTypes = {
   label: PropTypes.string,
   error: PropTypes.bool,
   text: PropTypes.string,
+  maxNumOfLines: PropTypes.number,
+  multiLIne: PropTypes.bool,
+}
+
+TextInputComponent.defaultTypes = {
+  maxNumOfLines: 1,
+  multiLine: false,
 }
 
 export default TextInputComponent

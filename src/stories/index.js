@@ -7,9 +7,7 @@ import 'typeface-roboto'
 
 // Components
 import Button from '../components/Button'
-import Tooltip from '../components/Tooltip'
 import TextInputComponent from '../components/TextInputComponent'
-import TextArea from '../components/TextArea'
 import SearchInput from '../components/SearchInput'
 
 // Style Guide
@@ -36,12 +34,6 @@ storiesOf('Theming', module)
   .add('Icons', () => <Icons />)
   .add('Typography', () => <Typography />)
 
-storiesOf('Tooltip', module).add('Tooltip', () => (
-  <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-    <Tooltip main={true} title="Label" />
-  </View>
-))
-
 storiesOf('TextInput', module)
   .add('Text Input', () => (
     <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
@@ -56,13 +48,17 @@ storiesOf('TextInput', module)
   ))
   .add('Text Area', () => (
     <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-      <TextArea placeholder={'Placeholder'} />
-      <TextArea label="Textarea label" text={'Lorem ipsum dolor sit amet, consectetur ' +
+      <TextInputComponent placeholder={'Placeholder'} 
+        multiLine={true}
+        maxNumOfLines={3}/>
+      <TextInputComponent label="Textarea label" text={'Lorem ipsum dolor sit amet, consectetur ' +
           'adipiscing elit, sed do eiusmod tempor ' + 
-          'incididunt ut labore et dolore magna aliqua'} />
-      <TextArea
+          'incididunt ut labore et dolore magna aliqua'} 
+          multiLine={true}
+          maxNumOfLines={3}/>
+      <TextInputComponent
         label="Textarea label"
-       
+        multiLine={true}
         maxNumOfLines={8}
       />
     </View>
