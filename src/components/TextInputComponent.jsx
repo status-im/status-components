@@ -16,28 +16,26 @@ const { colors } = theme
 
 const styles = StyleSheet.create({
   label: {
-    backgroundColor: colors.main.white.rgb,
-    marginHorizontal: 16,
-    marginTop: 16,
-    marginBottom: 8,
+    fontSize: 14,
+    fontFamily: 'Inter UI',
   },
   inputContainer: {
+    padding: 16,
     justifyContent: 'center',
     backgroundColor: colors.main.white.rgb,
     marginVertical: 8,
     marginHorizontal: 8,
+    borderRadius: 8,
   },
   input: {
-    marginBottom: 16,
-    marginHorizontal: 16,
-    padding: 16,
-    borderRadius: 8,
-    width: 343,
+    padding: 0,
     backgroundColor: colors.main.lightGrey.rgb,
+    minHeight: 52,
+    width: 343,
   },
-  error: {
-    color: colors.main.red.rgb,
-  },
+  // error: {
+  //   color: colors.main.red.rgb,
+  // },
   text: {
     fontWeight: 'normal',
     fontStyle: 'normal',
@@ -48,13 +46,14 @@ const styles = StyleSheet.create({
 })
 
 class TextInputComponent extends React.Component {
-  render() {
-    const { label, error, text, maxNumOfLines, multiLine,} = this.props
 
+  render() {
+    const { label, error, text, maxNumOfLines, multiLine, autoFocus } = this.props
+    
     return (
       <View>
         <View style={[styles.inputContainer]}>
-          <Text style={[styles.label, styles.text, error && styles.error]}>
+          <Text style={[styles.label, error && styles.error]}>
             {label}
           </Text>
           <TouchableOpacity
@@ -62,11 +61,12 @@ class TextInputComponent extends React.Component {
             onPress={() => console.log('Pressed')}
           >
             <TextInput
-              style={[styles.input, styles.text]}
               {...this.props}
               placeholderTextColor={'gray'}
               multiline={multiLine}
               numberOfLines={maxNumOfLines}
+              style={[styles.input, styles.text]}
+              autoFocus={autoFocus}
               autoCapitalize={'none'}
               value={text}
             />
@@ -83,11 +83,13 @@ TextInputComponent.propTypes = {
   text: PropTypes.string,
   maxNumOfLines: PropTypes.number,
   multiLIne: PropTypes.bool,
+  autoFocus: PropTypes.bool,
 }
 
 TextInputComponent.defaultTypes = {
   maxNumOfLines: 1,
   multiLine: false,
+  autoFocus: true,
 }
 
 export default TextInputComponent
