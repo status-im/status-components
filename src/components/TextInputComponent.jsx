@@ -18,19 +18,22 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     fontFamily: 'Inter UI',
+    paddingBottom: 8,
   },
   inputContainer: {
+    paddingTop: 8,
     padding: 16,
     justifyContent: 'center',
     backgroundColor: colors.main.white.rgb,
-    marginVertical: 8,
-    marginHorizontal: 8,
+    marginVertical: 16,
+    marginHorizontal: 16,
     borderRadius: 8,
   },
   input: {
     padding: 0,
     backgroundColor: colors.main.lightGrey.rgb,
     minHeight: 52,
+    overflowY: 'auto',
     width: 343,
   },
   // error: {
@@ -46,9 +49,15 @@ const styles = StyleSheet.create({
 })
 
 class TextInputComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      height: 0
+    };
+  }
 
   render() {
-    const { label, error, text, maxNumOfLines, multiLine, autoFocus } = this.props
+    const { label, error, text, multiLine, autoFocus } = this.props
     
     return (
       <View>
@@ -62,10 +71,14 @@ class TextInputComponent extends React.Component {
           >
             <TextInput
               {...this.props}
+              onContentSizeChange={(event) => {
+                if(this.state.height <= 160) {
+                  this.setState({height: event.nativeEvent.contentSize.height})
+                }
+              }}
               placeholderTextColor={'gray'}
               multiline={multiLine}
-              numberOfLines={maxNumOfLines}
-              style={[styles.input, styles.text]}
+              style={[styles.input, styles.text, {minHeight: Math.max(52, this.state.height)}]}
               autoFocus={autoFocus}
               autoCapitalize={'none'}
               value={text}
@@ -82,12 +95,11 @@ TextInputComponent.propTypes = {
   error: PropTypes.bool,
   text: PropTypes.string,
   maxNumOfLines: PropTypes.number,
-  multiLIne: PropTypes.bool,
+  multiLine: PropTypes.bool,
   autoFocus: PropTypes.bool,
 }
 
 TextInputComponent.defaultTypes = {
-  maxNumOfLines: 1,
   multiLine: false,
   autoFocus: true,
 }

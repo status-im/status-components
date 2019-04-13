@@ -43,25 +43,16 @@ storiesOf('TextInput', module)
         label="Input label"
         text={'Lorem ipsum dolor sit amet, consectetur do'}
       />
-      {/* <TextInputComponent label="Input label" text={'Content'} error={true} /> */}
     </View>
   ))
   .add('Text Area', () => (
     <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
       <TextInputComponent placeholder={'Placeholder'} 
         multiLine={true}
-        maxNumOfLines={3}
         autoFocus={false}/>
-      <TextInputComponent label="Textarea label" text={'Lorem ipsum dolor sit amet, consectetur ' +
-          'adipiscing elit, sed do eiusmod tempor ' + 
-          'incididunt ut labore et dolore magna aliqua'} 
-          multiLine={true}
-          maxNumOfLines={3}
-          autoFocus={false}/>
       <TextInputComponent
         label="Textarea label"
         multiLine={true}
-        maxNumOfLines={8}
         autoFocus={false}
       />
     </View>
