@@ -5,9 +5,10 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableOpacity,
 } from 'react-native'
+
+import { TextInput as TextInputComponent } from 'react-native'
 
 // Theme
 import theme from '../theme'
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
   },
 })
 
-class TextInputComponent extends React.Component {
+class TextInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -69,7 +70,7 @@ class TextInputComponent extends React.Component {
             activeOpacity={0.6}
             onPress={() => console.log('Pressed')}
           >
-            <TextInput
+            <TextInputComponent
               {...this.props}
               onContentSizeChange={(event) => {
                 if(this.state.height <= 160) {
@@ -90,7 +91,7 @@ class TextInputComponent extends React.Component {
   }
 }
 
-TextInputComponent.propTypes = {
+TextInput.propTypes = {
   label: PropTypes.string,
   error: PropTypes.bool,
   text: PropTypes.string,
@@ -99,9 +100,9 @@ TextInputComponent.propTypes = {
   autoFocus: PropTypes.bool,
 }
 
-TextInputComponent.defaultTypes = {
+TextInput.defaultTypes = {
   multiLine: false,
   autoFocus: true,
 }
 
-export default TextInputComponent
+export default TextInput
