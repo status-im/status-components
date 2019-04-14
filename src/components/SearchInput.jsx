@@ -5,9 +5,10 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableOpacity,
 } from 'react-native'
+
+import TextInput from './TextInput'
 
 // Theme
 import theme from '../theme'
@@ -20,7 +21,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    backgroundColor: colors.main.white.rgb,
     borderRadius: 8,
     marginVertical: 16,
     marginHorizontal: 16,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
 })
 
-class SearchInput extends React.Component {
+class SearchInput extends TextInput {
   render() {
     const { text } = this.props
 

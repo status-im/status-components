@@ -10,7 +10,7 @@ export default {
     tera: '32px',
     peta: '40px',
     exa: '48px',
-    zetta: '56px',
+    zetta: '56px'
   },
 
   colors: {

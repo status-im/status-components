@@ -54,6 +54,7 @@ storiesOf('TextInput', module)
         label="Textarea label"
         multiLine={true}
         autoFocus={false}
+        placeholder={'Placeholder'}
       />
     </View>
   ))
