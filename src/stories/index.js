@@ -7,7 +7,7 @@ import 'typeface-roboto'
 
 // Components
 import Button from '../components/Button'
-import TextInput from '../components/TextInput'
+import TextInput from "../components/TextInput"
 import SearchInput from '../components/SearchInput'
 
 // Style Guide
@@ -37,30 +37,23 @@ storiesOf('Theming', module)
 storiesOf('TextInput', module)
   .add('Text Input', () => (
     <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-      <TextInput placeholder={'Placeholder'} />
-      <TextInput text={'Content'} />
-      <TextInput
-        label="Input label"
-        text={'Lorem ipsum dolor sit amet, consectetur do'}
-      />
+      <TextInput placeholder={'Placeholder'} 
+      labeltext={'Input label'}
+      labelishidden={false}/>
     </View>
   ))
   .add('Text Area', () => (
     <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-      <TextInput placeholder={'Placeholder'} 
-        multiLine={true}
-        autoFocus={false}/>
-      <TextInput
-        label="Textarea label"
-        multiLine={true}
+      <TextInput placeholder={'Placeholder'}
         autoFocus={false}
-        placeholder={'Placeholder'}
+        labeltext={'Textarea label'}
+        labelishidden={false}
+        textarea={true}
       />
     </View>
   ))
   .add('Search Input', () => (
     <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-      <SearchInput placeholder={'Search placeholder...'} autoFocus={true} />
       <SearchInput placeholder={'Search placeholder...'} />
     </View>
   ))
